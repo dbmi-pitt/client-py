@@ -227,8 +227,8 @@ class FHIRAbstractBase(object):
                 errs.append(AttributeError("Superfluous entry \"{}\" in data for {}"
                     .format(supflu, self)))
         
-        if len(errs) > 0:
-            raise FHIRValidationError(errs)
+        #if len(errs) > 0:
+        #    raise FHIRValidationError(errs)
     
     def as_json(self):
         """ Serializes to JSON by inspecting `elementProperties()` and creating
@@ -293,8 +293,9 @@ class FHIRAbstractBase(object):
                 errs.append(KeyError("Property \"{}\" on {} is not optional, you must provide a value for it"
                     .format(nonop, self)))
         
-        if len(errs) > 0:
-            raise FHIRValidationError(errs)
+        #if len(errs) > 0:
+        #    raise FHIRValidationError(errs)
+        
         return js
     
     def _matches_type(self, value, typ):
